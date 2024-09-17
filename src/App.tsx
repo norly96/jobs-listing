@@ -1,22 +1,24 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
+import Header from "./components/Header";
+import JobsList from "./components/JobsList";
+import Filter from "./components/Filter";
+
+const languages: string[] = [
+  "Frontend",
+  "ReactJS",
+  "CSS",
+  "Javascript",
+  "Astro",
+  "Backend",
+];
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <div className="font-spartan">
-        <h1 className="text-dark-cyan font-medium">
-          Senior Frontend Developer
-        </h1>
-        <h1 className="text-dark-cyan font-bold">Senior Frontend Developer</h1>
+      <Header />
+      <div className="flex flex-col justify-center items-center">
+        <Filter languages={languages} />
+        <JobsList />
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   );
 }
