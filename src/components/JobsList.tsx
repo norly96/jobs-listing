@@ -1,9 +1,13 @@
-import React from "react";
+import JobsCard from "./JobsCard";
 
 const JobsList = () => {
   return (
-    <div className="bg-slate-500 mx-44">
-      <h1>List</h1>
+    <div className="w-full mt-20 font-spartan">
+      <JobsCard />
+      <JobsCard />
+      <JobsCard />
+      <JobsCard />
+      <JobsCard />
     </div>
   );
 };
