@@ -6,6 +6,7 @@ export default {
     extend: {
       boxShadow: {
         '3xl': '3px -19px 64px 11px rgba(90,164,164,1)',
+        '4xl': '3px 4px 44px -7px rgba(90,164,164,1)',
       },
       fontFamily: {
 				spartan: ['League-Spartan','sans-serif'],
