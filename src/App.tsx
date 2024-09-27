@@ -1,25 +1,17 @@
 import Header from "./components/Header";
 import JobsList from "./components/JobsList";
 import Filter from "./components/Filter";
-
-const languages: string[] = [
-  "Frontend",
-  "ReactJS",
-  "CSS",
-  "Javascript",
-  "Astro",
-  "Backend",
-];
+import { JobProvider } from "./context/JobContext";
 
 function App() {
   return (
-    <>
+    <JobProvider>
       <Header />
       <div className="flex flex-col justify-center items-center">
-        <Filter languages={languages} />
+        <Filter />
         <JobsList />
       </div>
-    </>
+    </JobProvider>
   );
 }
 
