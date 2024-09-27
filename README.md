@@ -32,8 +32,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Solution FrontendMentor](https://your-solution-url.com)
-- Live Site URL: [Vercel](https://your-live-site-url.com)
+- Solution URL: [Solution FrontendMentor](https://www.frontendmentor.io/solutions/job-listings-with-filtering-solution-d-xPEGalT9)
+- Live Site URL: [Vercel](https://jobs-listing-sand.vercel.app/)
 
 ## My process
 
