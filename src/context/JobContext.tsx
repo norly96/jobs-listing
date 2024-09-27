@@ -11,10 +11,11 @@ import axios from "axios";
 interface JobContextProps {
   jobs: Job[];
   filters: string[];
+  setFilters: React.Dispatch<React.SetStateAction<string[]>>;
   selectedFilters: string[];
   addFilter: (filter: string) => void;
   removeFilter: (filter: string) => void;
-  //filteredJobs: Job[];
+  clearFilters: () => void;
 }
 
 export const JobContext = createContext<JobContextProps | undefined>(undefined);
@@ -29,27 +30,27 @@ export const useJobContext = () => {
 
 export const JobProvider = ({ children }: { children: ReactNode }) => {
   const [jobs, setJobs] = useState<Job[]>([]);
-  const [filters, setfilters] = useState<string[]>([]);
+  const [filters, setFilters] = useState<string[]>([]);
   const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
 
-  // Función para agregar filtros
+  // Function for add filters
   const addFilter = (filter: string) => {
     setSelectedFilters((prevFilters) =>
       prevFilters.includes(filter) ? prevFilters : [...prevFilters, filter]
     );
   };
 
-  // Función para eliminar filtros
+  // Function for remove filters
   const removeFilter = (filter: string) => {
     setSelectedFilters((prevFilters) =>
       prevFilters.filter((f) => f !== filter)
     );
   };
 
-  // Filtrar los trabajos en base a los filtros seleccionados
-  /* const filteredJobs = jobs.filter((job) =>
-    selectedFilters.every((filter) => job.role.includes(filter))
-  ); */
+  // Function for remove filters
+  const clearFilters = () => {
+    setSelectedFilters([]);
+  };
 
   useEffect(() => {
     const loadJobs = async () => {
@@ -84,9 +85,11 @@ export const JobProvider = ({ children }: { children: ReactNode }) => {
       value={{
         jobs,
         filters,
+        setFilters,
         selectedFilters,
         addFilter,
         removeFilter,
+        clearFilters,
       }}
     >
       {children}
