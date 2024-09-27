@@ -47,7 +47,7 @@ export const JobProvider = ({ children }: { children: ReactNode }) => {
     );
   };
 
-  // Function for remove filters
+  // Function for remove all the filters
   const clearFilters = () => {
     setSelectedFilters([]);
   };
