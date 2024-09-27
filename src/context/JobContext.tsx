@@ -54,7 +54,7 @@ export const JobProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     const loadJobs = async () => {
-      const response = await axios.get("/src/data/data.json");
+      const response = await axios.get("/data.json");
       try {
         if (selectedFilters.length === 0) {
           const jobs = response.data;
